@@ -2,11 +2,11 @@ package com.example.bankingservice.service;
 
 import com.example.bankingservice.model.User;
 import com.example.bankingservice.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service

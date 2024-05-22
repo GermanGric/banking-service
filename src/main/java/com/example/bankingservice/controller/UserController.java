@@ -2,10 +2,10 @@ package com.example.bankingservice.controller;
 
 import com.example.bankingservice.model.User;
 import com.example.bankingservice.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/users")

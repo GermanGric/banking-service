@@ -1,7 +1,5 @@
 package com.example.bankingservice.service;
 
-package com.example.bankingservice.service;
-
 import com.example.bankingservice.model.BankAccount;
 import com.example.bankingservice.repository.BankAccountRepository;
 import com.example.bankingservice.repository.UserRepository;

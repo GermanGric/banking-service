@@ -2,12 +2,14 @@ package com.example.bankingservice.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
+@Data
 public class User {
 
     @Id

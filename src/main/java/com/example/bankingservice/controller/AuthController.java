@@ -1,11 +1,11 @@
 package com.example.bankingservice.controller;
 
-
 import com.example.bankingservice.model.AuthRequest;
 import com.example.bankingservice.model.AuthResponse;
 import com.example.bankingservice.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationManagerResolver;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;

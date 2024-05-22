@@ -1,6 +1,5 @@
 package com.example.bankingservice.controller;
 
-package com.example.bankingservice.controller;
 
 import com.example.bankingservice.service.MoneyTransferService;
 import com.example.bankingservice.service.UserService;
