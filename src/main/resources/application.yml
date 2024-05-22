@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/banking
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: your-256-bit-secret
+  expiration: 86400000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+
+server:
+  port: 8080
