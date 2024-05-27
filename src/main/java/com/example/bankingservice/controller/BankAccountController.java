@@ -1,9 +1,7 @@
 package com.example.bankingservice.controller;
 
-
 import com.example.bankingservice.service.MoneyTransferService;
 import com.example.bankingservice.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +10,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/accounts")
 public class BankAccountController {
 
-    @Autowired
-    private MoneyTransferService transferService;
+    private final MoneyTransferService transferService;
+    private final UserService userService;
 
-    @Autowired
-    private UserService userService;
+    public BankAccountController(MoneyTransferService transferService, UserService userService) {
+        this.transferService = transferService;
+        this.userService = userService;
+    }
 
     @PostMapping("/transfer")
     public void transferMoney(@AuthenticationPrincipal UserDetails userDetails,

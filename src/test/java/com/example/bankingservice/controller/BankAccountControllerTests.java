@@ -1,7 +1,5 @@
 package com.example.bankingservice.controller;
 
-package com.example.bankingservice.controller;
-
 import com.example.bankingservice.model.User;
 import com.example.bankingservice.service.MoneyTransferService;
 import com.example.bankingservice.service.UserService;
@@ -27,9 +25,7 @@ public class BankAccountControllerTests {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
-        controller = new BankAccountController();
-        controller.transferService = moneyTransferService;
-        controller.userService = userService;
+        controller = new BankAccountController(moneyTransferService, userService);
     }
 
     @Test
@@ -70,3 +66,4 @@ public class BankAccountControllerTests {
         verify(moneyTransferService, times(0)).transferMoney(anyLong(), anyLong(), anyDouble());
     }
 }
+
