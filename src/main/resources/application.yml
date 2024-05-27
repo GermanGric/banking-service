@@ -1,15 +1,18 @@
 spring:
   datasource:
-    spring.jpa.hibernate.ddl-auto=update
-    spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/bankingservice
-    spring.datasource.username=uthvfy
-    spring.datasource.password=uthvfy
-    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-  #spring.jpa.show-sql: true
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bankingservice
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
 
 jwt:
   secret: your-256-bit-secret

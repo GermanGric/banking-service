@@ -30,14 +30,14 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests
-                                .requestMatchers("/authenticate", "/register").permitAll()
-                                .anyRequest().authenticated()
+                .authorizeRequests(authorizeRequests -> authorizeRequests
+                        .requestMatchers("/authenticate", "/register", "/index.html", "/", "/**/*.css", "/**/*.js", "/static/**").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .sessionManagement(sessionManagement ->
-                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement(sessionManagement -> sessionManagement
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 );
+
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
@@ -56,3 +56,4 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
+
