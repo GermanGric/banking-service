@@ -60,7 +60,6 @@ public class BankAccountControllerTests {
         try {
             controller.transferMoney(mockUserDetails, 2L, 50.0);
         } catch (RuntimeException e) {
-            // Expected exception
         }
 
         verify(moneyTransferService, times(0)).transferMoney(anyLong(), anyLong(), anyDouble());

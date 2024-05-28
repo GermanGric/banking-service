@@ -41,5 +41,4 @@ public class User {
     @JoinColumn(name = "bank_account_id", referencedColumnName = "id")
     private BankAccount bankAccount;
 
-    // Getters and Setters
 }

@@ -19,5 +19,4 @@ public class BankAccount {
     @Min(0)
     private double initialDeposit;
 
-    // Getters and Setters
 }
