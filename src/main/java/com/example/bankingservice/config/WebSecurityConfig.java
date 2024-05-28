@@ -30,8 +30,8 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/authenticate", "/register", "/index.html", "/", "/**/*.css", "/**/*.js", "/static/**").permitAll()
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/authenticate", "/register", "/index.html", "/", "/**/*.css", "/**/*.js", "/static/**", "/public/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManagement -> sessionManagement
