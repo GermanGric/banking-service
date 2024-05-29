@@ -11,7 +11,7 @@ public class BankAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Min(0)
     private double balance;
