@@ -17,8 +17,8 @@ public class MoneyTransferService {
     private BankAccountRepository bankAccountRepository;
 
     @Transactional
-    public void transferMoney(Long fromUserId, Long toUserId, double amount) {
-        if (fromUserId.equals(toUserId)) {
+    public void transferMoney(long fromUserId, long toUserId, double amount) {
+        if (fromUserId == toUserId) {
             throw new RuntimeException("Cannot transfer money to the same account");
         }
 

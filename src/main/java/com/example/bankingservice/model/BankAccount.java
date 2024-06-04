@@ -14,9 +14,9 @@ public class BankAccount {
     private long id;
 
     @Min(0)
-    private double balance;
+    private double balance;//баланс
 
     @Min(0)
-    private double initialDeposit;
+    private double initialDeposit;// первоначальный деюозит
 
 }

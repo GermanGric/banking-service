@@ -18,7 +18,7 @@ public class  UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public Optional<User> getUserById(Long id) {
+    public Optional<User> getUserById(long id) {
         return userRepository.findById(id);
     }
 
@@ -27,7 +27,7 @@ public class  UserService {
         return userRepository.save(user);
     }
 
-    public boolean existsByLogin(String login)  {
+    public boolean existsByLogin(String login) {
         return userRepository.findByLogin(login).isPresent();
     }
 
@@ -40,14 +40,15 @@ public class  UserService {
     }
 
     @Transactional
-    public User updateUserContactInfo(Long userId, String newEmail, String newPhoneNumber) {
+    public User updateUserContactInfo(long userId, String newEmail, String newPhoneNumber) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         if (newEmail != null && !newEmail.isEmpty() && userRepository.findByEmail(newEmail).isEmpty()) {
             user.setEmail(newEmail);
         }
 
-        if (newPhoneNumber != null && !newPhoneNumber.isEmpty() && userRepository.findByPhoneNumber(newPhoneNumber).isEmpty()) {
+        if (newPhoneNumber != null && !newPhoneNumber.isEmpty() &&
+                userRepository.findByPhoneNumber(newPhoneNumber).isEmpty()) {
             user.setPhoneNumber(newPhoneNumber);
         }
 

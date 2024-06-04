@@ -20,7 +20,7 @@ public class BankAccountController {
 
     @PostMapping("/transfer")
     public void transferMoney(@AuthenticationPrincipal UserDetails userDetails,
-                              @RequestParam Long toUserId,
+                              @RequestParam long toUserId,
                               @RequestParam double amount) {
 
         Long fromUserId = userService.getUserByLogin(userDetails.getUsername())

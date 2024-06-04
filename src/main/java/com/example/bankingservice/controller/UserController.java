@@ -25,13 +25,13 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
+    public User getUser(@PathVariable long id) {
         return userService.getUserById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
     @PutMapping("/{id}/contact")
-    public User updateUserContactInfo(@PathVariable Long id, @RequestBody User userDetails) {
+    public User updateUserContactInfo(@PathVariable long id, @RequestBody User userDetails) {
         return userService.updateUserContactInfo(id, userDetails.getEmail(), userDetails.getPhoneNumber());
     }
 }
